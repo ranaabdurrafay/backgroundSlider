@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BACKGROUNDSLIDER</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(137, 43, 226);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* z-index: -1; */
+        }
+
+        .border-container {
+            height: 350px;
+            width: 50%;
+            border: 5px solid hotpink;
+            margin: auto;
+            position: relative;
+            border-radius: 30px;
+        }
+
+        .img {
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            border-radius: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .leftbutton {
+            height: 50px;
+            width: 5%;
+            position: absolute;
+            top: 45%;
+            left: 20.5%;
+            border: 5px solid purple;
+            background-color: green;
+        }
+
+        .leftbutton:hover {
+            background-color: blue;
+        }
+
+        .leftarrow {
+            font-size: 30px;
+            color: darkmagenta;
+
+        }
+
+        .leftarrow:hover {
+            color: red;
+            cursor: pointer;
+            text-decoration: underline;
+
+        }
+
+        .rightbutton {
+            height: 50px;
+            width: 5%;
+            position: absolute;
+            top: 45%;
+            right: 20.5%;
+            border: 5px solid darkblue;
+            background-color: saddlebrown;
+
+        }
+
+        .rightbutton {
+            color: orange;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .rightbutton:hover {
+
+            text-decoration: underline;
+            cursor: pointer;
+            background-color: pink;
+        }
+
+        .show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="border-container">
+            <div class="img show"
+                style="background-image: url('https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2-1024x684.jpg');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://webneel.com/daily/sites/default/files/images/daily/08-2018/1-nature-photography-spring-season-mumtazshamsee.jpg');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?cs=srgb&dl=pexels-michael-block-3225517.jpg&fm=jpg');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://burst.shopifycdn.com/photos/cave-of-wonder-and-lights.jpg?width=1200&format=pjpg&exif=1&iptc=1');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://assets.hongkiat.com/uploads/nature-photography/autumn-poolside.jpg');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://www.shutterstock.com/image-photo/autumn-forest-nature-vivid-morning-260nw-766886038.jpg');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://e0.pxfuel.com/wallpapers/988/343/desktop-wallpaper-nature-beautiful-nature-thumbnail.jpg');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://e0.pxfuel.com/wallpapers/988/343/desktop-wallpaper-nature-beautiful-nature-thumbnail.jpg');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/1121098-pink-nature-wallpaper-1920x1080-lockscreen.jpg/1024px-1121098-pink-nature-wallpaper-1920x1080-lockscreen.jpg');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://img.freepik.com/premium-photo/nature-wallpaper-beautiful-nature-wallpaper-4k-nature-wallpapers-hd-nature-wallpaper-green-nature_722194-162.jpg?w=2000');">
+            </div>
+            <div class="img"
+                style="background-image: url('https://www.shutterstock.com/image-photo/high-mountain-morning-time-beautiful-260nw-1384588922.jpg');">
+            </div>
+        </div>
+
+        <button class="leftbutton">
+            <i class="fa-solid fa-arrow-left leftarrow"></i>
+        </button>
+
+        <div class="rightbutton">
+            <i class="fa-solid fa-arrow-right rightarrow"></i>
+        </div>
+    </div>
+
+    <script>
+
+        let img = document.querySelectorAll('.img')
+        let leftbutton = document.querySelector('.leftbutton')
+        let rightbutton = document.querySelector('.rightbutton')
+        let main = document.querySelector('.main')
+
+        let movingslides = 0
+
+        leftbutton.addEventListener('click', function () {
+            movingslides--
+            // console.log(movingslides,'movingslides');
+            if (movingslides < 0) {
+                movingslides = img.length - 1
+                console.log(movingslides, 'movingafter');
+            }
+            natureimg()
+            setbgtobackground()
+        })
+
+        rightbutton.addEventListener('click', function () {
+            movingslides++
+            // console.log(movingslides);
+            if (movingslides > img.length - 1) {
+                movingslides = 0
+                console.log(movingslides, 'moving');
+            }
+            natureimg()
+            setbgtobackground()
+        })
+
+        function natureimg() {
+            console.log(img);
+            img.forEach(function (element) {
+                element.classList.remove('show')
+                img[movingslides].classList.add('show')
+
+            })
+        }
+        setbgtobackground()
+        function setbgtobackground() {
+  main.style.backgroundImage = img[movingslides].style.backgroundImage
+}
+    </script>
+</body>
+
+</html>
